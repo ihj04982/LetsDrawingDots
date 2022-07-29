@@ -32,6 +32,7 @@ public class ObjControl : MonoBehaviour
             }
             //selectedobj의 value를 저장하고.
             selectedObj = value;
+
             //현재 선택된 오브젝트의 selected 옵젝 활성화
             if (value != null)
             {
@@ -44,20 +45,9 @@ public class ObjControl : MonoBehaviour
                     {
                         value.transform.GetComponent<Break>().Explosion();
                     }
-
                 }
-
-
             }
-            /*
-            if (Input.GetTouch(0).tapCount > 4)
-            {
-
-                value.transform.GetComponent<Break>().Explosion();
-            }
-            */
         }
-
     }
     private void Awake()
     {
@@ -76,15 +66,5 @@ public class ObjControl : MonoBehaviour
                 transform.position = hitPose.position;
             }
         }
-    }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

@@ -35,24 +35,15 @@ public class PlaceOn : MonoBehaviour
     int tempInt = 0;
     bool rand = false;
     bool start;
-    //---------------------------------------------------------
+    
     public Transform objPool;
-    //public GameObject temp;
-    //---------------------------------------------------------
 
     void Start()
     {
-        //---------------------------------------------------------
-        //GameObject temptemp = Instantiate(temp);
-        //temptemp.transform.position = this.transform.position;
-        //temptemp.transform.SetParent(objPool);
-        //---------------------------------------------------------
-
         stockList = new List<GameObject>();
         for (int i = 0; i < Stock1Count; i++)
         {
             stockList.Add(Stock1);
-
         }
         for (int i = 0; i < Stock2Count; i++)
         {
@@ -62,6 +53,7 @@ public class PlaceOn : MonoBehaviour
         {
             stockList.Add(Stock3);
         }
+
         start = false;
         rand = true;
 
@@ -70,17 +62,15 @@ public class PlaceOn : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            if (EventSystem.current.currentSelectedGameObject == true)//IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            if (EventSystem.current.currentSelectedGameObject == true)
             {
                 return; //UI 터치가 감지됐을 경우 return
-                        //여기서부터 화면 터치 코드
             }
             //화면 터치X, 첫번째 터치 상태 Began이 아니면 실행하지 않는다.
             if (!ObjectCreate.TryGetInputPosition(out touchPosition))
             {
                 return;
             }
-
             ray = arCamera.ScreenPointToRay(touchPosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, PlacedObjectLayerMask))
             {
@@ -103,11 +93,8 @@ public class PlaceOn : MonoBehaviour
                     temp.transform.SetParent(objPool);
                 }
             }
-
         }
     }
-
-
 
     public void RandomCreate()
     {
@@ -139,8 +126,5 @@ public class PlaceOn : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-
-
-
     }
 }

@@ -55,14 +55,6 @@ public class Drawing02 : MonoBehaviour
     void DrawMouse()
     {
         Vector3 mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.3f));
-        
-        //if(Input.mousePosition.y <= -439)
-        //{
-            
-        //    return;
-        //}
-
-
         if (Input.GetMouseButtonDown(0))
         {
             createLine(mousePos);
@@ -90,7 +82,6 @@ public class Drawing02 : MonoBehaviour
         curLine.transform.SetParent(brushPool);
         brushList.Add(curLine);
 
-
         switch (curBrushSize)
         {
             case 0:
@@ -113,39 +104,12 @@ public class Drawing02 : MonoBehaviour
                 curLine.startWidth = 0.025f;
                 curLine.endWidth = 0.025f;
                 break;
-                
         }
 
-        //lineRend.startWidth = 0.01f;
-        //lineRend.endWidth = 0.01f;
-        //lineRend.numCornerVertices = 5;
-        //lineRend.numCapVertices = 5;
-        ////lineRend.material = brush;
         curLine.SetPosition(0, mousePos);
         curLine.SetPosition(1, mousePos);
 
-        //curLine = lineRend;
     }
-
-    public void Undo()
-    {
-
-        LineRenderer undo = brushList[brushList.Count - 1];
-        Destroy(undo.gameObject);
-        brushList.RemoveAt(brushList.Count - 1);
-
-    }
-    public void ClearScreen()
-    {
-
-        foreach (LineRenderer item in brushList)
-        {
-            Destroy(item.gameObject);
-        }
-        brushList.Clear();
-
-    }
-
     void connectLine(Vector3 mousePos)
     {
         if (PrevPos != null && Mathf.Abs(Vector3.Distance(PrevPos, mousePos)) >= 0.001f)
@@ -157,9 +121,20 @@ public class Drawing02 : MonoBehaviour
         }
     }
 
-    public void Clear()
+    public void Undo()
     {
-        //curLine.SetVertexCount(0);
+        LineRenderer undo = brushList[brushList.Count - 1];
+        Destroy(undo.gameObject);
+        brushList.RemoveAt(brushList.Count - 1);
+    }
+    public void ClearScreen()
+    {
+        foreach (LineRenderer item in brushList)
+        {
+            Destroy(item.gameObject);
+        }
+        brushList.Clear();
     }
 
+   
 }

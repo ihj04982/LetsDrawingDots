@@ -29,9 +29,4 @@ public class Break : MonoBehaviour
     {
         objPool = GameObject.Find("ObjectPool").transform;
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
