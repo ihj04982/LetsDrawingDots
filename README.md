@@ -1,4 +1,88 @@
-# LetsDrawingDots
-AR Application Using AR Foundation
+# 🤳 LET'S DRAWING DOTS
 
-Let's Drawing Dots is a virtual promotional Android application for LEGO DOTS which Includes AR drawing, 3D object interaction, face filters, cameras and gallery.
+## 📝 프로젝트 소개
+
+Let's Drawing Dots는 LEGO DOTS의 가상 프로모션을 위한 **Android 기반 AR 애플리케이션**입니다. 사용자가 증강현실 공간에서 창의적으로 그림을 그리고, 3D 오브젝트와 상호작용하며, 다양한 페이스 필터를 사용할 수 있는 인터랙티브한 경험을 제공합니다.
+
+## ⚙️ 개발 환경 및 기술 스택
+
+- **개발 기간**: 2022.06.09 ~ 2022.06.15
+- **개발 인원**: 총 4명 (기획 및 디자인 2명 / 개발 2명)
+- **개발 도구**: 
+  - Unity
+  - AR Foundation
+  - Android SDK
+
+## 🔍 주요 기능
+
+### 1. AR 드로잉
+- 실제 환경에 증강현실 그림 그리기
+- 일반/네온 브러쉬 선택 기능
+- 다양한 색상 옵션 제공
+- Undo 및 Clear 기능
+
+### 2. 3D 오브젝트 인터랙션
+- AR 공간에 3D LEGO DOTS 오브젝트 배치
+- 오브젝트 선택, 이동, 회전, 크기 조절
+- 랜덤 오브젝트 생성 시스템
+- 오브젝트 간 물리적 상호작용
+
+### 3. 페이스 필터
+- LEGO DOTS 테마의 AR 페이스 필터
+- 얼굴 인식 및 트래킹 기능
+- 다양한 필터 스타일 제공
+
+### 4. 카메라 및 갤러리 연동
+- AR 경험 캡처 기능
+- 갤러리 저장 및 공유 기능
+- 사진 촬영 및 관리
+
+## 📋 담당 역할
+
+- **서브 개발자 / 디자인**: 
+  - AR 드로잉 시스템 구현
+  - 3D 오브젝트 인터랙션 기능 개발
+  - UI/UX 디자인 참여
+
+## 🔧 구현 세부사항
+
+### AR 드로잉 시스템
+- LineRenderer를 활용한 AR 공간 내 그리기 기능
+- 터치 입력 감지 및 드로잉 포인트 생성
+- 브러쉬 종류에 따른 다양한 렌더링 효과
+- 문제 해결: 라인 렌더러와 UI 요소 간 터치 중복 문제 해결
+
+### 3D 오브젝트 인터랙션
+- AR 평면 인식을 통한 오브젝트 배치 시스템
+- 터치 기반 오브젝트 선택 및 조작
+- 랜덤 오브젝트 생성 알고리즘
+- PlaceOn, ObjCreate, ObjControl, Break 시스템 개발
+
+### 시스템 통합
+- 다양한 AR 기능 간 원활한 전환
+- 성능 최적화를 통한 안정적인 모바일 경험 제공
+- 직관적인 UI/UX 설계
+
+## 🧠 개발 과정에서 배운 점
+
+- **AR 환경의 제약 및 해결책**: 
+  - 바닥 인식의 한계를 경험하고 개선 방안 모색
+  - AR Foundation의 페이스 트래킹 기능의 제한점 이해
+- **모바일 AR 최적화**: 
+  - 모바일 디바이스에서의 AR 성능 최적화 기법 습득
+  - UI 터치 중복 등 모바일 특화 문제 해결 경험
+- **통합 AR 경험 설계**: 
+  - 다양한 AR 기능을 하나의 앱에 통합하는 방법 학습
+  - 사용자 경험을 고려한 기능 설계의 중요성 체득
+
+## 🔮 향후 개선 방향
+
+- AR Foundation의 얼굴 인식 개선을 통한 더 정교한 페이스 필터 개발
+- 더 안정적인 바닥 인식 알고리즘 구현
+- 다양한 LEGO DOTS 테마 및 시즌별 콘텐츠 추가
+- 소셜 미디어 공유 기능 강화
+
+## 🔗 관련 링크
+
+- [Notion에서 둘러보기](https://heejeonglim.notion.site/Let-s-Drawing-Do-2575c22d1b7448599f2b496d8205c66e?pvs=4)
+
